@@ -12,8 +12,8 @@ export class UsersResolver {
   async createUser(
     @Args('createUserDto') createUserDto: CreateUserDto,
   ): Promise<User> {
-    const recipe = await this.usersService.create(createUserDto);
-    return recipe;
+    const user = await this.usersService.create(createUserDto);
+    return user;
   }
 
   @Query(() => [User], { name: 'users' })
@@ -21,7 +21,7 @@ export class UsersResolver {
     return this.usersService.findAll();
   }
 
-  @Query(() => User, { name: 'recipe' })
+  @Query(() => User, { name: 'user' })
   findOne(@Args('id', { type: () => Int }) id: number) {
     return this.usersService.findOne(id);
   }

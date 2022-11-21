@@ -22,7 +22,7 @@ scalar DateTime
 
 type Query {
   users: [User!]!
-  recipe(id: Int!): User!
+  user(id: Int!): User!
 }
 
 type Mutation {
@@ -36,6 +36,7 @@ input CreateUserDto {
   email: String!
   firstName: String!
   lastName: String!
+  password: String!
 }
 
 input UpdateUserDto {
@@ -43,5 +44,6 @@ input UpdateUserDto {
   email: String
   firstName: String
   lastName: String
+  password: String
   id: Int = 0
 }

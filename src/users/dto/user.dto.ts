@@ -1,4 +1,3 @@
-import { ApiProperty } from '@nestjs/swagger';
 import { User } from '../entities/user.entity';
 
 type UserProperties = Required<UserDto>;
@@ -7,23 +6,14 @@ export enum State {
   DEACTIVATED = 'DEACTIVATED',
 }
 export class UserDto {
-  @ApiProperty()
   id: number;
-  @ApiProperty({ example: 'newlogin' })
   login: string;
-  @ApiProperty({ example: 'email@domain.com' })
   email: string;
-  @ApiProperty()
   firstName: string;
-  @ApiProperty()
   lastName: string;
-  @ApiProperty({ enum: State })
   state: string;
-  @ApiProperty()
   password: string;
-  @ApiProperty()
   createdAt: Date;
-  @ApiProperty()
   updatedAt: Date;
 
   constructor(value: User) {

@@ -19,15 +19,21 @@ export class CreateUserDto {
   @IsNotEmpty()
   lastName: string;
 
+  @Field()
+  @IsNotEmpty()
+  password: string;
+
   constructor(
     login: string,
     email: string,
     firstName: string,
     lastName: string,
+    password: string,
   ) {
     this.login = login;
     this.email = email;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.password = password;
   }
 }
